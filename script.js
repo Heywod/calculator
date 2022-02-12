@@ -17,6 +17,10 @@ buttons.forEach((button) => {
     const operand = holderValue.slice(-2);
     // If its a number
     if (button.classList.contains('number')) {
+      //Stop multiple decimals
+      if (numberValue === '.' && displayValue.includes('.')) {
+        return;
+      }
       if (displayValue == 0) {
         input.textContent = numberValue;
       } else {
